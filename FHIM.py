@@ -86,7 +86,8 @@ class FHIM:
 		r = r.dot(q)
 
 		for i in range(k):
-			beta = rho[i] * np.dot(y[i], r)
+			#beta = rho[i] * np.dot(y[i], r)
+                        beta = np.dot(y[i], r) / rho[i]
 			r = r + (alphas[i] - beta) * s[i]
 		
 		#modification to owd with projection
